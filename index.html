@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B A Naveenkumar - Deep Learning Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --background: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+            position: relative;
+            font-size: 2.2rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .experience-item:hover, .education-item:hover, .project-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .company {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+        
+        .role {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .date-location {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        li:before {
+            content: '▹';
+            position: absolute;
+            left: -20px;
+            color: var(--secondary);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 5px;
+        }
+        
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background: var(--light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .project-item {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-title {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .date-location {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .achievement {
+            background: var(--light);
+            padding: 15px;
+            border-left: 4px solid var(--secondary);
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>B A Naveenkumar</h1>
+                <h2>Deep Learning Engineer</h2>
+                <p class="tagline">Mission-driven Deep Learning Engineer with 4.7 years of experience in developing, training & deploying production-grade AI models for real-world applications.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>basaanithanaveenkumar@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/basaanthanaveenkumar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="experience-item">
+                <div class="company">Mercedes-Benz - Research & Development</div>
+                <div class="role">Deep Learning Engineer - Perception</div>
+                <div class="date-location">
+                    <span>06/2023 - Present</span>
+                    <span>Bangalore, India</span>
+                </div>
+                <ul>
+                    <li>Developing advanced self-driving stack for next-generation Mercedes-Benz vehicles</li>
+                    <li>Boosted 2D and 3D multi-camera object detection accuracy(mAP) by <span class="highlight">10% and 12%</span> while reducing latency by <span class="highlight">28%</span></li>
+                    <li>Developed production-ready VLAM multi-modal path planning system from scratch</li>
+                    <li>Developed End-to-End autonomous driving DNN achieving <span class="highlight">18% better (ADE)</span> planning metrics</li>
+                    <li>Engineered <span class="highlight">50% model compression</span> with near zero accuracy loss</li>
+                    <li>Created innovative proximity-based ADAS metric for trajectory prediction and planning</li>
+                    <li>Bronze Star recipient recognized for driving cross-functional innovation</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="company">TCS - Research & Innovation Labs</div>
+                <div class="role">Research ML Developer</div>
+                <div class="date-location">
+                    <span>02/2021 - 06/2023</span>
+                    <span>Bangalore, India</span>
+                </div>
+                <ul>
+                    <li>Developed and trained over <span class="highlight">124 production-grade reusable AI models</span></li>
+                    <li>Reduced <span class="highlight">80% of manual labeling effort</span> by pioneering auto-annotation algo</li>
+                    <li>Developed <span class="highlight">Sensat and SencV Libraries</span> – reducing development time by 50%</li>
+                    <li>Mentored <span class="highlight">8 engineers</span> to develop cutting-edge AI solutions</li>
+                    <li>Scaled geo-spatial AI - <span class="highlight">7x faster processing</span>, 2.7x data-fetch</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-title">Programming & Frameworks</div>
+                    <div class="skill-items">
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">C/C++</div>
+                        <div class="skill-item">PyTorch</div>
+                        <div class="skill-item">TensorFlow</div>
+                        <div class="skill-item">OpenCV</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-title">AI/ML Technologies</div>
+                    <div class="skill-items">
+                        <div class="skill-item">Deep Learning</div>
+                        <div class="skill-item">Computer Vision</div>
+                        <div class="skill-item">NLP</div>
+                        <div class="skill-item">LLM</div>
+                        <div class="skill-item">Transformer</div>
+                        <div class="skill-item">Diffusion Models</div>
+                        <div class="skill-item">GenAI</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-title">Autonomous Systems</div>
+                    <div class="skill-items">
+                        <div class="skill-item">ADAS</div>
+                        <div class="skill-item">ROS</div>
+                        <div class="skill-item">Robotics</div>
+                        <div class="skill-item">LiDAR</div>
+                        <div class="skill-item">4D-RADAR</div>
+                        <div class="skill-item">SLAM/SFM</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-title">Tools & Platforms</div>
+                    <div class="skill-items">
+                        <div class="skill-item">Git</div>
+                        <div class="skill-item">Linux</div>
+                        <div class="skill-item">CUDA</div>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">TensorRT</div>
+                        <div class="skill-item">ONNX</div>
+                        <div class="skill-item">Cloud</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Key Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-title">Agri-Sort Grading System</div>
+                <p>An automated solution with state memory and 360-degree real-time 2D object perception to precisely sort and grade fruits & veggies by size, shape, color, weight, and surface quality.</p>
+                <div class="achievement">
+                    <span class="highlight">Result:</span> Increased throughput by 400% (700 to 2,800 U/hr)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            
+            <div class="education-item">
+                <div class="company">Madanapalle Institute of Technology and Science</div>
+                <div class="role">B.Tech in Electronics & Communication Eng</div>
+                <div class="date-location">
+                    <span>06/2017 - 04/2020</span>
+                    <span>8.96 CGPA</span>
+                </div>
+            </div>
+            
+            <div class="achievement">
+                <span class="highlight">744 Certifications</span> from Deeplearning.ai, Coursera, Udemy on CV, DL, RADAR, and ROS
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Connect with me</p>
+            <div class="social-links">
+                <a href="mailto:basaanithanaveenkumar@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2023 B A Naveenkumar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
